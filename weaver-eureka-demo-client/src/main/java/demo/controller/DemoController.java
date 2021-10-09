@@ -1,9 +1,3 @@
-/*
- *
- * Copyright (c) 2001-2021 泛微软件.
- * 泛微协同商务系统,版权所有.
- *
- */
 
 package demo.controller;
 
