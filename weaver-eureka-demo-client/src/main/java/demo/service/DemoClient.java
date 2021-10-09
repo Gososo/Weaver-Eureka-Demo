@@ -15,7 +15,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
-@FeignClient("ecology-workflow-service")
+@FeignClient("${weaver.provider.name}")
 public interface DemoClient {
     @RequestMapping(value = "/", method = GET)
     String hello();

@@ -16,6 +16,10 @@ eureka:
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
 
+weaver:
+  provider:
+    name: ecology-workflow-service
+
 feign:
   circuitbreaker:
     enabled: true
