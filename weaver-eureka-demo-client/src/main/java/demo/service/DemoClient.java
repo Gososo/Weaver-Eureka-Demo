@@ -1,0 +1,31 @@
+/*
+ *
+ * Copyright (c) 2001-2021 泛微软件.
+ * 泛微协同商务系统,版权所有.
+ *
+ */
+
+package demo.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+
+@FeignClient("ecology-workflow-service")
+public interface DemoClient {
+    @RequestMapping(value = "/", method = GET)
+    String hello();
+
+    @RequestMapping(value = "/api/health/check", method = GET)
+    String check(@RequestParam(name = "key1") String par1, @RequestParam(name = "key2") String par2);
+
+    @RequestMapping(value = "/api/demo/provider/post", method = POST)
+    String post();
+
+    @RequestMapping(value = "/api/system/appmanage/route", method = GET)
+    String route();
+}
